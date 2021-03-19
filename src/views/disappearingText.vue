@@ -34,7 +34,7 @@ export default {
 section{
     position: relative;
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     min-height: calc(100vh - 78px);
     background: #111;

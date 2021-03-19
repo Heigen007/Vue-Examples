@@ -257,7 +257,8 @@ export default {
 
 .title{
     font-size: 2rem;
-    color: #42b983
+    color: #42b983;
+    margin: 5px;
 }
 
 @media only screen and (max-width : 768px) {

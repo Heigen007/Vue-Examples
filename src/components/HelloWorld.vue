@@ -2,8 +2,11 @@
   <div class="hello">
     <h3>Animations</h3>
     <ul>
-      <li><a href="/spider">Spider</a></li>
-      <li><a href="/disappearingText">Disappearing Text - Smoke</a></li>
+      <li><a href="/spider">Line Spider</a></li>
+      <li><a href="/disappearingText">Disappearing Smoke Text</a></li>
+      <li><a href="/ImageHoverEffect">Image Hover Effect</a></li>
+      <li><a href="/ScrollEffect">Scroll Effect</a></li>
+      <li><a href="/ImageFlipEffect">Image Flip Effect</a></li>
     </ul>
   </div>
 </template>
