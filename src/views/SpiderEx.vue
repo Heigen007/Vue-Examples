@@ -12,10 +12,21 @@
 import gsap from "gsap";
 import { TweenMax, TweenLite } from "gsap";
 
-window.onload = init;
 
-function init() {
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+
+export default {
+  name:"A",
+  // components: {
+  //   // strick,
+  //   // box,
+  // },
+  // data: function () {
+  //   return {
+  //     strV: 0
+  //   }
+  // }
+  mounted(){
+      var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
     // Main
     initHeader();
@@ -86,8 +97,10 @@ function init() {
 
     // Event handling
     function addListeners() {
-        if(!('ontouchstart' in window)) {
-            window.addEventListener('mousemove', mouseMove);
+        if('ontouchstart' in window) {
+            window.addEventListener('touchstart', mouseMove, false);
+        } else {
+            window.addEventListener('mousemove', mouseMove, false);
         }
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
@@ -103,6 +116,9 @@ function init() {
         else if (e.clientX || e.clientY)    {
             posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
             posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        } else if (e.touches[0].pageX || e.touches[0].pageY){
+            posx = e.touches[0].pageX;
+            posy = e.touches[0].pageY - 100;
         }
         target.x = posx;
         target.y = posy;
@@ -198,21 +214,7 @@ function init() {
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
-    
-}
-
-
-export default {
-  name:"A"
-  // components: {
-  //   // strick,
-  //   // box,
-  // },
-  // data: function () {
-  //   return {
-  //     strV: 0
-  //   }
-  // }
+  }
 }
 </script>
 

@@ -100,7 +100,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    min-width: 1100px;
+    min-width: 350px;
 }
 .container .card{
     position: relative;
