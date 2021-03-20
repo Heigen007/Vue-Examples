@@ -261,6 +261,7 @@ export default {
     font-size: 2rem;
     color: #42b983;
     margin: 5px;
+    text-align: center;
 }
 
 @media only screen and (max-width : 768px) {

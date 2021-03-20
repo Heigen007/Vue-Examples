@@ -7,6 +7,9 @@ import disappearingText from '../views/disappearingText.vue'
 import ImageHoverEffect from '../views/ImageHoverEffect.vue'
 import ScrollEffect from '../views/ScrollEffect.vue'
 import ImageFlipEffect from '../views/ImageFlipEffect.vue'
+import DotsCSSPreloader from '../views/DotsCSSPreloader.vue'
+import CSSCardHoverEffect from '../views/CSSCardHoverEffect.vue'
+import ImageAppearingAnimation from '../views/ImageAppearingAnimation.vue'
 
 Vue.use(VueRouter)
 
@@ -45,9 +48,24 @@ const routes = [
     path: '/ImageFlipEffect',
     name: 'ImageFlipEffect',
     component: ImageFlipEffect
+  },
+  {
+    path: '/DotsCSSPreloader',
+    name: 'DotsCSSPreloader',
+    component: DotsCSSPreloader
+  },
+  {
+    path: '/CSSCardHoverEffect',
+    name: 'CSSCardHoverEffect',
+    component: CSSCardHoverEffect
+  }
+  ,
+  {
+    path: '/ImageAppearingAnimation',
+    name: 'ImageAppearingAnimation',
+    component: ImageAppearingAnimation
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

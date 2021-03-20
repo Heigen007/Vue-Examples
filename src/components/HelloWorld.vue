@@ -5,6 +5,9 @@
       <li><a href="/spider">Line Spider</a></li>
       <li><a href="/disappearingText">Disappearing Smoke Text</a></li>
       <li><a href="/ImageHoverEffect">Image Hover Effect</a></li>
+      <li><a href="/DotsCSSPreloader">Dots CSS preloader</a></li>
+      <li><a href="/CSSCardHoverEffect">CSS Card Hover/Active Effect</a></li>
+      <li><a href="/ImageAppearingAnimation">Image Appearing Animation</a></li>
       <li><a href="/ScrollEffect">Scroll Effect</a></li>
       <li><a href="/ImageFlipEffect">Image Flip Effect</a></li>
     </ul>
