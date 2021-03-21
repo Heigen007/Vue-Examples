@@ -118,7 +118,7 @@
 
 <script>
 export default {
-    name: 'Home',
+    name: 'DotsCSSPreloader',
     mounted(){
     },
 }

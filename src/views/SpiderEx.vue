@@ -218,7 +218,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 *{
     margin:0;
     padding:0;
@@ -255,13 +255,6 @@ export default {
 	text-transform: uppercase;
 	font-size: 30px;
 	letter-spacing: 0.1em;
-}
-
-.title{
-    font-size: 2rem;
-    color: #42b983;
-    margin: 5px;
-    text-align: center;
 }
 
 @media only screen and (max-width : 768px) {

@@ -71,6 +71,7 @@ body{
 }
 
 .wrapper{
+  margin-top: 100px;
   width: 280px;
   height: 480px;
   perspective: 800px;

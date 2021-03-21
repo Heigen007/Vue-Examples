@@ -2,14 +2,16 @@
   <div class="hello">
     <h3>Animations</h3>
     <ul>
-      <li><a href="/spider">Line Spider</a></li>
-      <li><a href="/disappearingText">Disappearing Smoke Text</a></li>
+      <li><a href="/Spider">Line Spider</a></li>
+      <li><a href="/DisappearingText">Disappearing Smoke Text</a></li>
       <li><a href="/ImageHoverEffect">Image Hover Effect</a></li>
       <li><a href="/DotsCSSPreloader">Dots CSS preloader</a></li>
       <li><a href="/CSSCardHoverEffect">CSS Card Hover/Active Effect</a></li>
       <li><a href="/ImageAppearingAnimation">Image Appearing Animation</a></li>
+      <li><a href="/Error404">Error404</a></li>
+      <li><a href="/ClipPathImageEffect">CSS Clip-path Image Hover Effect</a></li>
       <li><a href="/ScrollEffect">Scroll Effect</a></li>
-      <li><a href="/ImageFlipEffect">Image Flip Effect</a></li>
+      <li><a href="/ImageFlipEffect">3D Image Flip Effect</a></li>
     </ul>
   </div>
 </template>

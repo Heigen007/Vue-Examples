@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class = "title">Image Appearing Animation Example</div>
-        <section>
+        <section class = "IAAS">
             <h2>Example</h2>
             <div class="banner">
                 <div class="blocks"></div>
@@ -15,26 +15,33 @@ export default {
     name: 'Home',
     mounted(){
     const banner = document.getElementsByClassName('banner')[0];
-    const blocks = document.getElementsByClassName('blocks');
+    var blocks = document.getElementsByClassName('blocks');
 
     for (var i = 1; i < 500; i++){
         banner.innerHTML += "<div class='blocks'></div>";
-        blocks[i].style.animationDelay = `${i * 0.012}s`;
+        blocks[i].style.animationDelay = `${i * 0.02}s`;
     }
     setTimeout(() => {
+        blocks = document.querySelectorAll('.blocks')
         console.log(document.querySelectorAll('.blocks').length);
-    }, 1000);
+        console.log(banner);
+        console.log(document.getElementsByClassName('blocks')[0]);
+        for (let index = 0; index < 500; index++) {
+            blocks[index].remove()
+        }
+        document.querySelector('.banner').style.background = "radial-gradient(63.08% 114.4% at 53.61% 0%, #FF6494 0%, #62AAFF 100%)"
+    }, 12500);
     },
 }
 </script>
 
 <style>
-section{
+.IAAS{
     position: relative;
     width: 100vw;
     height: 100vh;
 }
-section h2{
+.IAAS h2{
     position: relative;
     width: 100%;
     height: 60vh;

@@ -29,4 +29,10 @@
     }
   }
 }
+.title{
+    font-size: 2rem;
+    color: #42b983;
+    margin: 5px;
+    text-align: center;
+}
 </style>

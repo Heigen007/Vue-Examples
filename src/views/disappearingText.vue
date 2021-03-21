@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <div class = "title">Dissapearing Text - Smoke Example</div>
-    <section>
+    <section class = "DTS">
         <p class = "text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'Home',
+    name: 'DisapearingText',
     mounted(){
         const text = document.querySelector('.text')
         text.innerHTML = text.textContent.replace(/\S/g,
@@ -31,7 +31,7 @@ export default {
     box-sizing: border-box;
 }
 
-section{
+.DTS{
     position: relative;
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@ section{
     overflow: hidden;
 }
 
-section .text{
+.DTS .text{
     position: relative;
     text-align: center;
     color: #fff;
@@ -50,13 +50,13 @@ section .text{
     user-select: none;
     font-size: 1.5em;
 }
-section .text span{
+.DTS .text span{
     position: relative;
     display: inline-block;
     cursor: pointer;
 }
 
-section .text span.active{
+.DTS .text span.active{
     animation:  smoke 2s linear forwards;
 }
 
