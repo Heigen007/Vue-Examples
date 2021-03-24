@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="title">Scroll Effect Example</div>
+    <div class="title">Responsive Login and Registration Form Example</div>
     <div class="MainBox"></div>
   </div>
 </template>
