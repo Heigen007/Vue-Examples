@@ -9,7 +9,9 @@
       <li><a href="/CSSCardHoverEffect">CSS Card Hover/Active Effect</a></li>
       <li><a href="/ImageAppearingAnimation">Image Appearing Animation</a></li>
       <li><a href="/Error404">Error404</a></li>
-      <li><a href="/ClipPathImageEffect">CSS Clip-path Image Hover Effect</a></li>
+      <li>
+        <a href="/ClipPathImageEffect">CSS Clip-path Image Hover Effect</a>
+      </li>
       <li><a href="/ScrollEffect">Scroll Effect</a></li>
       <li><a href="/ScrollEffect2">Scroll Effect2</a></li>
       <li><a href="/ImageFlipEffect">3D Image Flip Effect</a></li>
@@ -19,15 +21,25 @@
       <li><a href="/3DFlipCard">3D Flip Card</a></li>
       <li><a href="/BackToTopButton">Back To Top Button</a></li>
       <li><a href="/TouchSlider">Infinitive Touch Slider</a></li>
-      <li><a href="/LiquidLoaderAnimationEffect">Liquid Loader Animation</a></li>
+      <li>
+        <a href="/LiquidLoaderAnimationEffect">Liquid Loader Animation</a>
+      </li>
+      <li><a href="/BackgroundBlendMode">Background Blend Mode</a></li>
+      <li><a href="/PulseAnimationEffect">Pulse Animation Effect</a></li>
+      <li><a href="/3DIsometricTextEffect">3D Isometric Text Effect</a></li>
+      <li>
+        <a href="/ResponsiveLogRegisterForm"
+          >Responsive Login and Registration Form</a
+        >
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
-}
+  name: "HelloWorld",
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -49,7 +61,7 @@ a {
   color: #42b983;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   color: green;
 }
 </style>

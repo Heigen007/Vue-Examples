@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/Home.vue'
 import examples from '../views/Examples.vue'
 import SpiderEx from '../views/SpiderEx.vue'
-import disappearingText from '../views/DisappearingText.vue'
+import DisappearingText from '../views/DisappearingText.vue'
 import ImageHoverEffect from '../views/ImageHoverEffect.vue'
 import ScrollEffect from '../views/ScrollEffect.vue'
 import ScrollEffect2 from '../views/ScrollEffect2.vue'
@@ -20,6 +20,11 @@ import ThreeDFlipCard from '../views/ThreeDFlipCard.vue'
 import BackToTopButton from '../views/BackToTopButton.vue'
 import TouchSlider from '../views/TouchSlider.vue'
 import LiquidLoaderAnimationEffect from '../views/LiquidLoaderAnimationEffect.vue'
+import BackgroundBlendMode from '../views/BackgroundBlendMode.vue'
+import PulseAnimationEffect from '../views/PulseAnimationEffect.vue'
+import ThreeDIsometricTextEffect from '../views/ThreeDIsometricTextEffect.vue'
+import ResponsiveLogRegisterForm from '../views/ResponsiveLogRegisterForm.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -39,9 +44,9 @@ const routes = [
     component: SpiderEx
   },
   {
-    path: '/disappearingText',
-    name: 'disappearingText',
-    component: disappearingText
+    path: '/DisappearingText',
+    name: 'DisappearingText',
+    component: DisappearingText
   },
   {
     path: '/ImageHoverEffect',
@@ -122,6 +127,26 @@ const routes = [
     path: '/LiquidLoaderAnimationEffect',
     name: 'LiquidLoaderAnimationEffect',
     component: LiquidLoaderAnimationEffect
+  },
+  {
+    path: '/BackgroundBlendMode',
+    name: 'BackgroundBlendMode',
+    component: BackgroundBlendMode
+  },
+  {
+    path: '/PulseAnimationEffect',
+    name: 'PulseAnimationEffect',
+    component: PulseAnimationEffect
+  },
+  {
+    path: '/3DIsometricTextEffect',
+    name: 'ThreeDIsometricTextEffect',
+    component: ThreeDIsometricTextEffect
+  },
+  {
+    path: '/ResponsiveLogRegisterForm',
+    name: 'ResponsiveLogRegisterForm',
+    component: ResponsiveLogRegisterForm
   }
 ]
 const router = new VueRouter({
