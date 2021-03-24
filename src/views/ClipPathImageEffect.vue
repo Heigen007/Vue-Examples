@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div class = "title">Scroll Effect Example</div>
+        <div class = "title">Clip-Path Image Effect Example</div>
         <div class="ExampleContainer">
             <div class="container">
                 <div class="box">

@@ -22,6 +22,7 @@ export default {
         blocks[i].style.animationDelay = `${i * 0.02}s`;
     }
     setTimeout(() => {
+        document.querySelector('.banner').style.background = "radial-gradient(63.08% 114.4% at 53.61% 0%, #FF6494 0%, #62AAFF 100%)"
         blocks = document.querySelectorAll('.blocks')
         console.log(document.querySelectorAll('.blocks').length);
         console.log(banner);
@@ -29,7 +30,6 @@ export default {
         for (let index = 0; index < 500; index++) {
             blocks[index].remove()
         }
-        document.querySelector('.banner').style.background = "radial-gradient(63.08% 114.4% at 53.61% 0%, #FF6494 0%, #62AAFF 100%)"
     }, 12500);
     },
 }

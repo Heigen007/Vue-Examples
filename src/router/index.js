@@ -1,18 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../components/Home.vue'
 import examples from '../views/Examples.vue'
 import SpiderEx from '../views/SpiderEx.vue'
 import disappearingText from '../views/DisappearingText.vue'
 import ImageHoverEffect from '../views/ImageHoverEffect.vue'
 import ScrollEffect from '../views/ScrollEffect.vue'
+import ScrollEffect2 from '../views/ScrollEffect2.vue'
 import ImageFlipEffect from '../views/ImageFlipEffect.vue'
 import DotsCSSPreloader from '../views/DotsCSSPreloader.vue'
 import CSSCardHoverEffect from '../views/CSSCardHoverEffect.vue'
 import ImageAppearingAnimation from '../views/ImageAppearingAnimation.vue'
 import Error404 from '../views/Error404.vue'
 import ClipPathImageEffect from '../views/ClipPathImageEffect.vue'
-
+import CardParalaxEffect from '../views/CardParalaxEffect.vue'
+import WavyTextAnimation from '../views/WavyTextAnimation.vue'
+import NeonTextEffect from '../views/NeonTextEffect.vue'
+import ThreeDFlipCard from '../views/ThreeDFlipCard.vue'
+import BackToTopButton from '../views/BackToTopButton.vue'
+import TouchSlider from '../views/TouchSlider.vue'
+import LiquidLoaderAnimationEffect from '../views/LiquidLoaderAnimationEffect.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -47,6 +54,11 @@ const routes = [
     component: ScrollEffect
   },
   {
+    path: '/ScrollEffect2',
+    name: 'ScrollEffect2',
+    component: ScrollEffect2
+  },
+  {
     path: '/ImageFlipEffect',
     name: 'ImageFlipEffect',
     component: ImageFlipEffect
@@ -75,6 +87,41 @@ const routes = [
     path: '/ClipPathImageEffect',
     name: 'ClipPathImageEffect',
     component: ClipPathImageEffect
+  },
+  {
+    path: '/CardParalaxEffect',
+    name: 'CardParalaxEffect',
+    component: CardParalaxEffect
+  },
+  {
+    path: '/WavyTextAnimation',
+    name: 'WavyTextAnimation',
+    component: WavyTextAnimation
+  },
+  {
+    path: '/NeonTextEffect',
+    name: 'NeonTextEffect',
+    component: NeonTextEffect
+  },
+  {
+    path: '/3DFlipCard',
+    name: '3DFlipCard',
+    component: ThreeDFlipCard
+  },
+  {
+    path: '/BackToTopButton',
+    name: 'BackToTopButton',
+    component: BackToTopButton
+  },
+  {
+    path: '/TouchSlider',
+    name: 'TouchSlider',
+    component: TouchSlider
+  },
+  {
+    path: '/LiquidLoaderAnimationEffect',
+    name: 'LiquidLoaderAnimationEffect',
+    component: LiquidLoaderAnimationEffect
   }
 ]
 const router = new VueRouter({
