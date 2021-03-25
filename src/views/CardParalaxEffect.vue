@@ -1,83 +1,91 @@
 <template>
-    <div class="home">
-        <!-- MORE INFORMATION ON http://tahuuchi.info/vue-tiltjs -->
-        <div class = "title">Card Paralax Hover Effect Example</div>
-        <div class="HomeBlock">
-        <div class="card" v-tilt>
-            <div class="card-image" ></div>
-            <div class="card-text">
-                <span class="date">4 days ago</span>
-                <h2>Post One</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
-            </div>
-            <div class="card-stats">
-                <div class="stat">
-                <div class="value">4<sup>m</sup></div>
-                <div class="type">read</div>
-                </div>
-                <div class="stat border">
-                <div class="value">5123</div>
-                <div class="type">views</div>
-                </div>
-                <div class="stat">
-                <div class="value">32</div>
-                <div class="type">comments</div>
-                </div>
-            </div>
-            </div>
-            <div class="card" v-tilt="{scale: 1.15}">
-            <div class="card-image card2"></div>
-            <div class="card-text card2">
-                <span class="date">1 week ago</span>
-                <h2>Post Two</h2>
-                <p>Adipisicing elit. Ducimus, repudiandae corrupti amet temporibus omnis provident illum maxime quod. Lorem ipsum dolor</p>
-            </div>
-            <div class="card-stats card2">
-                <div class="stat">
-                <div class="value">7<sup>m</sup></div>
-                <div class="type">read</div>
-                </div>
-                <div class="stat border">
-                <div class="value">7152</div>
-                <div class="type">views</div>
-                </div>
-                <div class="stat">
-                <div class="value">21</div>
-                <div class="type">comments</div>
-                </div>
-            </div>
-            </div>
-            <div class="card" v-tilt="{max: 50, speed: 3000}">
-                <div class="card-image card3"></div>
-                <div class="card-text card3">
-                <span class="date">3 week ago</span>
-                <h2>Post Three</h2>
-                <p>Repudiandae corrupti amet temporibus omnis provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
-                </div>
-                <div class="card-stats card3">
-                <div class="stat">
-                    <div class="value">5<sup>m</sup></div>
-                    <div class="type">read</div>
-                </div>
-                <div class="stat border">
-                    <div class="value">3021</div>
-                    <div class="type">views</div>
-                </div>
-                <div class="stat">
-                    <div class="value">15</div>
-                    <div class="type">comments</div>
-                </div>
-                </div>
-            </div>
+  <div class="home">
+    <!-- MORE INFORMATION ON http://tahuuchi.info/vue-tiltjs -->
+    <div class="title">Card Paralax Hover Effect Example</div>
+    <div class="HomeBlock">
+      <div class="cardP" v-tilt>
+        <div class="card-image"></div>
+        <div class="card-text">
+          <span class="date">4 days ago</span>
+          <h2>Post One</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae
+            temporibus omnis illum maxime quod deserunt eligendi dolor
+          </p>
         </div>
+        <div class="card-stats">
+          <div class="stat">
+            <div class="value">4<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">5123</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">32</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="cardP" v-tilt="{ scale: 1.15 }">
+        <div class="card-image card2"></div>
+        <div class="card-text card2">
+          <span class="date">1 week ago</span>
+          <h2>Post Two</h2>
+          <p>
+            Adipisicing elit. Ducimus, repudiandae corrupti amet temporibus
+            omnis provident illum maxime quod. Lorem ipsum dolor
+          </p>
+        </div>
+        <div class="card-stats card2">
+          <div class="stat">
+            <div class="value">7<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">7152</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">21</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="cardP" v-tilt="{ max: 50, speed: 3000 }">
+        <div class="card-image card3"></div>
+        <div class="card-text card3">
+          <span class="date">3 week ago</span>
+          <h2>Post Three</h2>
+          <p>
+            Repudiandae corrupti amet temporibus omnis provident illum maxime.
+            Ducimus, lorem ipsum dolor adipisicing elit
+          </p>
+        </div>
+        <div class="card-stats card3">
+          <div class="stat">
+            <div class="value">5<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">3021</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">15</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
-    name: 'Home',
-    mounted(){
-    },
-}
+  name: "Home",
+  mounted() {},
+};
 </script>
 
 <style>
@@ -88,22 +96,22 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background:url("../assets/CardParalaxEffectAssets/background.jpg");
+  background: url("../assets/CardParalaxEffectAssets/background.jpg");
   background-size: cover;
   overflow: hidden;
 }
-.card {
+.cardP {
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 210px 210px 80px;
   grid-template-areas: "image" "text" "stats";
   border-radius: 18px;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   font-family: roboto;
   text-align: center;
   cursor: pointer;
-  margin:30px;
+  margin: 30px;
   transition: 0.1s;
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -122,19 +130,19 @@ export default {
 }
 .card-text .date {
   color: rgb(255, 7, 110);
-  font-size:13px;
+  font-size: 13px;
 }
 .card-text p {
   color: grey;
-  font-size:15px;
+  font-size: 15px;
   font-weight: 300;
 }
 .card-text h2 {
-  margin-top:0px;
-  font-size:28px;
+  margin-top: 0px;
+  font-size: 28px;
 }
 .card-stats {
-  grid-area: stats; 
+  grid-area: stats;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -143,7 +151,7 @@ export default {
   background: rgb(255, 7, 110);
 }
 .card-stats .stat {
-  padding:10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,19 +162,18 @@ export default {
   border-left: 1px solid rgb(172, 26, 87);
   border-right: 1px solid rgb(172, 26, 87);
 }
-.card-stats .value{
-  font-size:22px;
+.card-stats .value {
+  font-size: 22px;
   font-weight: 500;
 }
-.card-stats .value sup{
-  font-size:12px;
+.card-stats .value sup {
+  font-size: 12px;
 }
-.card-stats .type{
-  font-size:11px;
+.card-stats .type {
+  font-size: 11px;
   font-weight: 300;
   text-transform: uppercase;
 }
-
 
 /*card2*/
 .card-image.card2 {

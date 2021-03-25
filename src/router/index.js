@@ -27,6 +27,7 @@ import ResponsiveLogRegisterForm from '../views/ResponsiveLogRegisterForm.vue'
 import ButtonRippleEffectOnClickEffect from '../views/ButtonRippleEffectOnClickEffect.vue'
 import ResponsiveCardHoverEffect from '../views/ResponsiveCardHoverEffect.vue'
 import CopyToClipboardEffect from '../views/CopyToClipboardEffect.vue'
+import Animated404Page from '../views/Animated404Page.vue'
 
 Vue.use(VueRouter)
 
@@ -165,6 +166,11 @@ const routes = [
     path: '/CopyToClipboardEffect',
     name: 'CopyToClipboardEffect',
     component: CopyToClipboardEffect
+  },
+  {
+    path: '/Animated404Page',
+    name: 'Animated404Page',
+    component: Animated404Page
   }
 ]
 const router = new VueRouter({

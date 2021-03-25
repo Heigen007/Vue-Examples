@@ -1,94 +1,97 @@
 <template>
-    <div class="home">
-        <div class = "title">Error404 Example</div>
-        <div class="ExampleBody">
-            <div class = "glitch" title="404">404</div>
-        </div>
-        
+  <div class="home">
+    <div class="title">Error404 Example</div>
+    <div class="ExampleBody">
+      <div class="glitch" title="404">404</div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Error404',
-    mounted(){
-    },
-}
+  name: "Error404",
+  mounted() {},
+};
 </script>
 
 <style scoped>
-
-.ExampleBody{ 
+.ExampleBody {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
   margin: 0;
   background: #131313;
   color: #fff;
   font-size: 96px;
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   letter-spacing: -7px;
   overflow: hidden;
 }
 
-.glitch{
+.glitch {
   animation: glitch 1s linear infinite;
 }
 
-@keyframes glitch{
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
   }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
   }
-  62%{
-    transform: translate(0,0) skew(5deg); 
+  62% {
+    transform: translate(0, 0) skew(5deg);
   }
 }
 
 div:before,
-div:after{
+div:after {
   content: attr(title);
   position: absolute;
   left: 0;
 }
 
-div:before{
+div:before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-@keyframes glitchTop{
-  2%,64%{
-    transform: translate(2px,-2px);
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
   }
-  4%,60%{
-    transform: translate(-2px,2px);
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
   }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
   }
 }
 
-div:after{
+div:after {
   animation: glitchBotom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-@keyframes glitchBotom{
-  2%,64%{
-    transform: translate(-2px,0);
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
   }
-  4%,60%{
-    transform: translate(-2px,0);
+  4%,
+  60% {
+    transform: translate(-2px, 0);
   }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
   }
 }
 </style>
