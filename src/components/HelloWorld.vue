@@ -28,10 +28,11 @@
       <li><a href="/PulseAnimationEffect">Pulse Animation Effect</a></li>
       <li><a href="/3DIsometricTextEffect">3D Isometric Text Effect</a></li>
       <li>
-        <a href="/ResponsiveLogRegisterForm"
-          >Responsive Login and Registration Form</a
-        >
+        <a href="/ResponsiveLogRegisterForm">Responsive Login and Registration Form</a>
       </li>
+      <li><a href="/ButtonRippleEffectOnClickEffect">Button Ripple Effect on Click Effect</a></li>
+      <li><a href="/ResponsiveCardHoverEffect">Responsive Card Hover Effect</a></li>
+      <li><a href="/CopyToClipboardEffect">Password Generator With Copy To Clipboard Effect</a></li>
     </ul>
   </div>
 </template>
