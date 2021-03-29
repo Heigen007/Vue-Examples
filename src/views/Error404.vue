@@ -1,97 +1,44 @@
 <template>
+  <!-- Works only on localhost or with ssl/tlc protocols -->
   <div class="home">
-    <div class="title">Error404 Example</div>
-    <div class="ExampleBody">
-      <div class="glitch" title="404">404</div>
+    <h2>1. Start your Webcam</h2>
+    <div class="videos">
+      <span>
+        <h3>Local Stream</h3>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
     </div>
+
+    <button id="webcamButton">Start webcam</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "Error404",
-  mounted() {},
+  mounted() {
+    let localStream = null;
+    const webcamButton = document.getElementById("webcamButton");
+    const webcamVideo = document.getElementById("webcamVideo");
+
+    webcamButton.onclick = async () => {
+      localStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+      webcamVideo.srcObject = localStream;
+    };
+  },
 };
 </script>
 
 <style scoped>
-.ExampleBody {
-  display: flex;
-  width: 100vw;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background: #131313;
-  color: #fff;
-  font-size: 96px;
-  font-family: "Fira Mono", monospace;
-  letter-spacing: -7px;
-  overflow: hidden;
-}
-
-.glitch {
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0) skew(0deg);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0) skew(5deg);
-  }
-}
-
-div:before,
-div:after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-}
-
-div:before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(2px, -2px);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
-  }
-}
-
-div:after {
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-  2%,
-  64% {
-    transform: translate(-2px, 0);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0);
-  }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
-  }
+#webcamButton {
+  background-color: #b6eebd;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 </style>
