@@ -28,6 +28,13 @@ import ButtonRippleEffectOnClickEffect from '../views/ButtonRippleEffectOnClickE
 import ResponsiveCardHoverEffect from '../views/ResponsiveCardHoverEffect.vue'
 import CopyToClipboardEffect from '../views/CopyToClipboardEffect.vue'
 import Animated404Page from '../views/Animated404Page.vue'
+import ThreeDImageHoverEffect from '../views/ThreeDImageHoverEffect.vue'
+import CloudBannerParallaxEffect from '../views/CloudBannerParallaxEffect.vue'
+import PopupAfterLoad from '../views/PopupAfterLoad.vue'
+import ResponsiveSidebarMenu from '../views/ResponsiveSidebarMenu.vue'
+import TabsEffect from '../views/TabsEffect.vue'
+import GlassmorphismProductCard from '../views/GlassmorphismProductCard.vue'
+import RecordPlayer from '../views/RecordPlayer.vue'
 
 Vue.use(VueRouter)
 
@@ -171,6 +178,41 @@ const routes = [
     path: '/Animated404Page',
     name: 'Animated404Page',
     component: Animated404Page
+  },
+  {
+    path: '/3DImageHoverEffect',
+    name: '3DImageHoverEffect',
+    component: ThreeDImageHoverEffect
+  },
+  {
+    path: '/CloudBannerParallaxEffect',
+    name: 'CloudBannerParallaxEffect',
+    component: CloudBannerParallaxEffect
+  },
+  {
+    path: '/PopupAfterLoad',
+    name: 'PopupAfterLoad',
+    component: PopupAfterLoad
+  },
+  {
+    path: '/ResponsiveSidebarMenu',
+    name: 'ResponsiveSidebarMenu',
+    component: ResponsiveSidebarMenu
+  },
+  {
+    path: '/TabsEffect',
+    name: 'TabsEffect',
+    component: TabsEffect
+  },
+  {
+    path: '/GlassmorphismProductCard',
+    name: 'GlassmorphismProductCard',
+    component: GlassmorphismProductCard
+  },
+  {
+    path: '/RecordPlayer',
+    name: 'RecordPlayer',
+    component: RecordPlayer
   }
 ]
 const router = new VueRouter({

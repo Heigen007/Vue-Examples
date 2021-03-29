@@ -22,9 +22,12 @@
       <li><a href="/3DFlipCard">3D Flip Card</a></li>
       <li><a href="/CSSCardHoverEffect">CSS Card Hover/Active Effect</a></li>
       <li><a href="/BackgroundBlendMode">Background Blend Mode</a></li>
+      <li><a href="/3DImageHoverEffect">3D Image Hover Effect</a></li>
       <li>
         <a href="/ResponsiveCardHoverEffect">Responsive Card Hover Effect</a>
       </li>
+      <li><a href="/TabsEffect">Tabs Effect</a></li>
+      <li><a href="/GlassmorphismProductCard">Glassmorphism Product Card</a></li>
     </ul>
 
     <h3>Scroll Effects</h3>
@@ -53,6 +56,10 @@
           >Password Generator With Copy To Clipboard Effect</a
         >
       </li>
+      <li><a href="/CloudBannerParallaxEffect">Cloud Banner Parallax Effect</a></li>
+      <li><a href="/PopupAfterLoad">Responsive Popup Offer After Page Load</a></li>
+      <li><a href="/ResponsiveSidebarMenu">Responsive Sidebar Menu</a></li>
+      <li><a href="/RecordPlayer">Record Player</a></li>
     </ul>
 
     <h3>Preloaders</h3>
@@ -80,11 +87,22 @@
 <script>
 export default {
   name: "HelloWorld",
+  mounted(){
+    let progress = document.getElementById('progressBar')
+    let totalHeight = document.body.scrollHeight - window.innerHeight
+    window.onscroll = function(){
+      let progressHeight = (window.pageYOffset / totalHeight) * 100
+      progress.style.height = progressHeight + "%"
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+.hello{
+  padding-bottom: 20px;
+}
 h3 {
   margin: 30px 0 0;
 }
@@ -105,33 +123,14 @@ a {
 a:hover {
   color: green;
 }
+
 ::-webkit-scrollbar {
-  width: 0px;
-}
-#scrollPath {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: rgba(49, 25, 25, 0.7);
-}
-#progressBar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  animation: animate 5s linear infinite;
-}
-@keyframes animate {
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
+    width: 10px;
+    background-color: #72c293;
   }
-  50% {
-    filter: hue-rotate(360deg);
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #b6eebd;
   }
-}
 </style>

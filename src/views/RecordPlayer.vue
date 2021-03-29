@@ -1,27 +1,5 @@
 <template>
     <div class="home">
-        <div class = "title">Scroll Effect Example</div>
-        div.MainBox
-    </div>
-</template>
-
-<script>
-export default {
-    name: 'Home',
-    mounted(){
-    },
-}
-</script>
-
-<style scoped>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-</style>
-<template>
-    <div class="home">
         <div class = "title">Record Player Example</div>
         <div class="MainBoxRP">
             <div class="recordContainer">
