@@ -35,6 +35,22 @@ import ResponsiveSidebarMenu from '../views/ResponsiveSidebarMenu.vue'
 import TabsEffect from '../views/TabsEffect.vue'
 import GlassmorphismProductCard from '../views/GlassmorphismProductCard.vue'
 import RecordPlayer from '../views/RecordPlayer.vue'
+import Webcam from '../views/Webcam.vue'
+import TypingAnimation from '../views/TypingAnimation.vue'
+import CSSClips from '../views/CSSClips.vue'
+import VoiceAndText from '../views/VoiceAndText.vue'
+import LeavingPreventMessage from '../views/LeavingPreventMessage.vue'
+import JSTextAnimation from '../views/JSTextAnimation.vue'
+import ChartjsLineChart from '../views/ChartjsLineChart.vue'
+import THREEJSTunnel from '../views/THREEJSTunnel.vue'
+import THREEJSProductCard from '../views/THREEJSProductCard.vue'
+import MicrosoftHomepage from '../views/MicrosoftHomepage.vue'
+import NetflixLandingPage from '../views/NetflixLandingPage.vue'
+import RellaxJsPage from '../views/RellaxJsPage.vue'
+import VideoLandingPage from '../views/VideoLandingPage.vue'
+import CSSGridWebsiteLayout from '../views/CSSGridWebsiteLayout.vue'
+import TurningPages from '../views/TurningPages.vue'
+import SpaceXLandingPage from '../views/SpaceXLandingPage.vue'
 
 Vue.use(VueRouter)
 
@@ -213,6 +229,86 @@ const routes = [
     path: '/RecordPlayer',
     name: 'RecordPlayer',
     component: RecordPlayer
+  },
+  {
+    path: '/Webcam',
+    name: 'Webcam',
+    component: Webcam
+  },
+  {
+    path: '/TypingAnimation',
+    name: 'TypingAnimation',
+    component: TypingAnimation
+  },
+  {
+    path: '/CSSClips',
+    name: 'CSSClips',
+    component: CSSClips
+  },
+  {
+    path: '/VoiceAndText',
+    name: 'VoiceAndText',
+    component: VoiceAndText
+  },
+  {
+    path: '/LeavingPreventMessage',
+    name: 'LeavingPreventMessage',
+    component: LeavingPreventMessage
+  },
+  {
+    path: '/JSTextAnimation',
+    name: 'JSTextAnimation',
+    component: JSTextAnimation
+  },
+  {
+    path: '/ChartjsLineChart',
+    name: 'ChartjsLineChart',
+    component: ChartjsLineChart
+  },
+  {
+    path: '/THREEJSTunnel',
+    name: 'THREEJSTunnel',
+    component: THREEJSTunnel
+  },
+  {
+    path: '/THREEJSProductCard',
+    name: 'THREEJSProductCard',
+    component: THREEJSProductCard
+  },
+  {
+    path: '/MicrosoftHomepage',
+    name: 'MicrosoftHomepage',
+    component: MicrosoftHomepage
+  },
+  {
+    path: '/NetflixLandingPage',
+    name: 'NetflixLandingPage',
+    component: NetflixLandingPage
+  },
+  {
+    path: '/RellaxJsPage',
+    name: 'RellaxJsPage',
+    component: RellaxJsPage
+  },
+  {
+    path: '/VideoLandingPage',
+    name: VideoLandingPage,
+    component: VideoLandingPage
+  },
+  {
+    path: '/CSSGridWebsiteLayout',
+    name: 'CSSGridWebsiteLayout',
+    component: CSSGridWebsiteLayout
+  },
+  {
+    path: '/TurningPages',
+    name: 'TurningPages',
+    component: TurningPages
+  },
+  {
+    path: '/SpaceXLandingPage',
+    name: 'SpaceXLandingPage',
+    component: SpaceXLandingPage
   }
 ]
 const router = new VueRouter({

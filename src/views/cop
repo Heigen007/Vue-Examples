@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="title">Animated 404 Page Example</div>
+    <div class="title">Scroll Effect Example</div>
     <div class="MainBox">
       <div class="error">
         <div class="sky">

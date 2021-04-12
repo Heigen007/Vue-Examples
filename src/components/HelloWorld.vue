@@ -8,6 +8,7 @@
       <li><a href="/WavyTextAnimation">Wavy Text Animation/Loader</a></li>
       <li><a href="/NeonTextEffect">Neon Light Text Effect</a></li>
       <li><a href="/3DIsometricTextEffect">3D Isometric Text Effect</a></li>
+      <li><a href="/TypingAnimation">Typing Animation</a></li>
     </ul>
 
     <h3>Image/Card Effects</h3>
@@ -51,15 +52,22 @@
           >Responsive Login and Registration Form</a
         >
       </li>
-      <li>
-        <a href="/CopyToClipboardEffect"
-          >Password Generator With Copy To Clipboard Effect</a
-        >
-      </li>
       <li><a href="/CloudBannerParallaxEffect">Cloud Banner Parallax Effect</a></li>
       <li><a href="/PopupAfterLoad">Responsive Popup Offer After Page Load</a></li>
       <li><a href="/ResponsiveSidebarMenu">Responsive Sidebar Menu</a></li>
       <li><a href="/RecordPlayer">Record Player</a></li>
+      <li><a href="/ChartJsLineChart">Chartjs Line Chart</a></li>
+      <li><a href="/THREEJSProductCard">THREEJS Product Card</a></li>
+    </ul>
+
+    <h3>Complete Page Examples</h3>
+    <ul>
+      <li><a href="/MicrosoftHomepage">Microsoft Homepage Clone</a></li>
+      <li><a href="/NetflixLandingPage">Netflix Landing Page Clone</a></li>
+      <li><a href="/RellaxJsPage">Rellax.js Page</a></li>
+      <li><a href="/VideoLandingPage">Video Landing Page</a></li>
+      <li><a href="/CSSGridWebsiteLayout">CSS Grid Website Layout</a></li>
+      <li><a href="/SpaceXLandingPage">SpaceX Landing Page</a></li>
     </ul>
 
     <h3>Preloaders</h3>
@@ -73,6 +81,12 @@
 
     <h3>Extra Effects</h3>
     <ul>
+      <li><a href="/TurningPages">Turning Pages</a></li>
+      <li>
+        <a href="/CopyToClipboardEffect"
+          >Password Generator With Copy To Clipboard Effect</a
+        >
+      </li>
       <li><a href="/PulseAnimationEffect">Pulse Animation Effect</a></li>
       <li><a href="/Spider">Line Spider</a></li>
       <li>
@@ -80,6 +94,12 @@
           >Button Ripple Effect on Click</a
         >
       </li>
+      <li><a href="/CSSClips">CSS Clips</a></li>
+      <li><a href="/Webcam">Webcam</a></li>
+      <li><a href="/VoiceAndText">Voice and Text</a></li>
+      <li><a href="/LeavingPreventMessage">Leaving Prevent Message</a></li>
+      <li><a href="/JSTextAnimation">JS Text Animation</a></li>
+      <li><a href="/THREEJSTunnel">THREEJS Tunnel</a></li>
     </ul>
   </div>
 </template>
@@ -104,7 +124,12 @@ export default {
   padding-bottom: 20px;
 }
 h3 {
-  margin: 30px 0 0;
+  margin: 30px 0 0 !important;
+  font-size: 1.4em !important;
+  font-weight: 500 !important;
+}
+h1{
+  font-size: 2em !important;
 }
 ul {
   list-style-type: none;
