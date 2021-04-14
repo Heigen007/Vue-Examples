@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <header id="showcase" class="grid">
+        <header id="showcase" class="grid2">
         <div class="bg-image"></div>
         <div class="content-wrap">
             <h1>Welcome to Acme Web Solutions</h1>
@@ -192,6 +192,7 @@ section{
   padding: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #section-b li {
@@ -237,13 +238,12 @@ section{
   text-decoration: none;
 }
 
+.grid2 {
+    display: grid;
+  }
 /* Media Queries */
 
 @media (min-width: 700px) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  }
 
   #section-a .content-text {
     columns: 2;
@@ -267,10 +267,12 @@ section{
   #section-b ul {
     display: flex;
     justify-content: space-around;
+    width: 100%;
   }
 
   #section-b li {
-    width: 31%;
+    width: 28%;
+    min-width: 300px;
   }
 }
 </style>

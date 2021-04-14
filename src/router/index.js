@@ -51,6 +51,8 @@ import VideoLandingPage from '../views/VideoLandingPage.vue'
 import CSSGridWebsiteLayout from '../views/CSSGridWebsiteLayout.vue'
 import TurningPages from '../views/TurningPages.vue'
 import SpaceXLandingPage from '../views/SpaceXLandingPage.vue'
+import RxJsPaintClone from '../views/RxJsPaintClone'
+import ChatThemes from '../views/ChatThemes.vue'
 
 Vue.use(VueRouter)
 
@@ -309,6 +311,16 @@ const routes = [
     path: '/SpaceXLandingPage',
     name: 'SpaceXLandingPage',
     component: SpaceXLandingPage
+  },
+  {
+    path: '/RxJsPaintClone',
+    name: 'RxJsPaintClone',
+    component: RxJsPaintClone
+  },
+  {
+    path: '/ChatThemes',
+    name: 'ChatThemes',
+    component: ChatThemes
   }
 ]
 const router = new VueRouter({

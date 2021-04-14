@@ -46,7 +46,7 @@
 
     <h3>Complete Components</h3>
     <ul>
-      <li><a href="/TouchSlider">Infinitive Touch Slider</a></li>
+      <li><a href="/TouchSlider">Swiper.js Infinitive Touch Slider</a></li>
       <li>
         <a href="/ResponsiveLogRegisterForm"
           >Responsive Login and Registration Form</a
@@ -56,18 +56,19 @@
       <li><a href="/PopupAfterLoad">Responsive Popup Offer After Page Load</a></li>
       <li><a href="/ResponsiveSidebarMenu">Responsive Sidebar Menu</a></li>
       <li><a href="/RecordPlayer">Record Player</a></li>
-      <li><a href="/ChartJsLineChart">Chartjs Line Chart</a></li>
+      <li><a href="/ChartJsLineChart">Chart.js Line Chart</a></li>
       <li><a href="/THREEJSProductCard">THREEJS Product Card</a></li>
+      <li><a href="/ChatThemes">Chat Component With Theme Switcher</a></li>
     </ul>
 
     <h3>Complete Page Examples</h3>
     <ul>
       <li><a href="/MicrosoftHomepage">Microsoft Homepage Clone</a></li>
       <li><a href="/NetflixLandingPage">Netflix Landing Page Clone</a></li>
-      <li><a href="/RellaxJsPage">Rellax.js Page</a></li>
       <li><a href="/VideoLandingPage">Video Landing Page</a></li>
       <li><a href="/CSSGridWebsiteLayout">CSS Grid Website Layout</a></li>
       <li><a href="/SpaceXLandingPage">SpaceX Landing Page</a></li>
+      <li><a href="/RellaxJsPage">Rellax.js Page</a></li>
     </ul>
 
     <h3>Preloaders</h3>
@@ -82,6 +83,7 @@
     <h3>Extra Effects</h3>
     <ul>
       <li><a href="/TurningPages">Turning Pages</a></li>
+      <li><a href="/THREEJSTunnel">THREEJS Tunnel</a></li>
       <li>
         <a href="/CopyToClipboardEffect"
           >Password Generator With Copy To Clipboard Effect</a
@@ -99,7 +101,17 @@
       <li><a href="/VoiceAndText">Voice and Text</a></li>
       <li><a href="/LeavingPreventMessage">Leaving Prevent Message</a></li>
       <li><a href="/JSTextAnimation">JS Text Animation</a></li>
+      <li><a href="/RxJsPaintClone">Rx.js Paint clone</a></li>
+    </ul>
+    <hr style="height: 3px; margin-top: 30px; box-shadow: 0 0 20px rgba(0,0,0,1)">
+    <h3>Library`s examples</h3>
+    <ul>
+      <li><a href="/RellaxJsPage">Rellax.js Page</a></li>
+      <li><a href="/ChartJsLineChart">Chart.js Line Chart</a></li>
+      <li><a href="/THREEJSProductCard">THREEJS Product Card</a></li>
       <li><a href="/THREEJSTunnel">THREEJS Tunnel</a></li>
+      <li><a href="/TouchSlider">Swiper.js Infinitive Touch Slider</a></li>
+      <li><a href="/RxJsPaintClone">Rx.js Paint clone</a></li>
     </ul>
   </div>
 </template>
@@ -124,9 +136,9 @@ export default {
   padding-bottom: 20px;
 }
 h3 {
-  margin: 30px 0 0 !important;
-  font-size: 1.4em !important;
-  font-weight: 500 !important;
+  margin: 30px 0 0;
+  font-size: 1.4em;
+  font-weight: 500;
 }
 h1{
   font-size: 2em !important;
