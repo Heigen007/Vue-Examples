@@ -57,6 +57,7 @@ import ChatThemes from '../views/ChatThemes.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '*', component: ChatThemes },
   {
     path: '/',
     name: 'Home',

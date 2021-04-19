@@ -25,6 +25,8 @@
     "materialize-css": "^1.0.0",
     "pnltri": "^2.1.1",
     "popper.js": "^1.16.1",
+    "pwacompat": "^2.0.17",
+    "register-service-worker": "^1.7.1",
     "rellax": "^1.12.1",
     "rxjs": "^6.6.7",
     "sweetalert2": "^10.15.6",
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "^4.5.12",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
