@@ -2,25 +2,75 @@
   <div class="home">
     <div class="title">Animated 404 Page Example</div>
     <div class="MainBox">
-      <div class="error">
-        <div class="sky">
-          <h2><span>4</span><span>0</span><span>4</span></h2>
-          <div class="grass"></div>
-          <img src="../assets/Animated404PageAssets/plane.png" class="plane" />
-        </div>
-        <div class="field">
-          <h2>Opps...looks like you got lost.</h2>
-          <div>Go Home</div>
-        </div>
-      </div>
+      <input type="file" accept="image/*" id="imageUpload">
     </div>
   </div>
 </template>
 
 <script>
+import * as faceapi from '../face-api.min.js'
+const imageUpload = document.getElementById('imageUpload')
+let predictedAges = [];
+
+Promise.all([
+  faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+  faceapi.nets.faceLandmark68TinyNet.loadFromUri('/models'),
+  faceapi.nets.ssdMobilenetv1.loadFromUri('/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri("/models"),
+  faceapi.nets.ageGenderNet.loadFromUri("/models")
+]).then(start)
+
+function interpolateAgePredictions(age) {
+  predictedAges = [age].concat(predictedAges).slice(0, 30);
+  const avgPredictedAge =
+    predictedAges.reduce((total, a) => total + a) / predictedAges.length;
+  return avgPredictedAge;
+}
+
+
+async function start() {
+  const useTinyModel = true
+  const container = document.createElement('div')
+  container.style.position = 'relative'
+  document.body.append(container)
+  let image
+  let canvas
+  imageUpload.addEventListener('change', async () => {
+    if (image) image.remove()
+    if (canvas) canvas.remove()
+    image = await faceapi.bufferToImage(imageUpload.files[0])
+    container.append(image)
+    canvas = faceapi.createCanvasFromMedia(image)
+    container.append(canvas)
+    const displaySize = { width: image.width, height: image.height }
+    faceapi.matchDimensions(canvas, displaySize)
+    const detections = await faceapi.detectAllFaces(image).withFaceLandmarks(useTinyModel).withFaceExpressions().withAgeAndGender()
+    const resizedDetections = faceapi.resizeResults(detections, displaySize)
+    resizedDetections.forEach((result, i) => {
+      const box = resizedDetections[i].detection.box
+      const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
+      faceapi.draw.drawDetections(canvas, resizedDetections);
+      faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+      faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+      const age = resizedDetections[0].age;
+      const interpolatedAge = interpolateAgePredictions(age);
+      const bottomRight = {
+        x: resizedDetections[0].detection.box.topRight.x - 50,
+        y: resizedDetections[0].detection.box.topRight.y - 23
+      };
+  
+      new faceapi.draw.DrawTextField(
+        [`${Math.round(interpolatedAge)} years`],
+        bottomRight
+      ).draw(canvas);
+    })
+  })
+}
+
+console.log(faceapi);
 export default {
-  name: "Home",
-  mounted() {},
+  name: "Home"
 };
 </script>
 

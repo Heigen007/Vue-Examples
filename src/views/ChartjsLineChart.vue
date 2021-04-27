@@ -26,7 +26,7 @@ export default {
         var data  = {
             labels: [ 'January', 'February', 'March', 'April', 'May', 'June' ],
             datasets: [{
-                    label: 'Custom Label Name',
+                    label: 'Процент довольных клиентов',
                     backgroundColor: gradient,
                     pointBackgroundColor: 'white',
                     pointBorderWidth: 3,
