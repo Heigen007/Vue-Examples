@@ -53,6 +53,9 @@ import TurningPages from '../views/TurningPages.vue'
 import SpaceXLandingPage from '../views/SpaceXLandingPage.vue'
 import RxJsPaintClone from '../views/RxJsPaintClone'
 import ChatThemes from '../views/ChatThemes.vue'
+import FaceRecogniser from '../views/FaceApiJs-FaceRecogniser.vue'
+import NavigatorAbilities from '../views/NavigatorAbilities.vue'
+import WebRtcChat from '../views/WebRtcChat.vue'
 
 Vue.use(VueRouter)
 
@@ -322,6 +325,21 @@ const routes = [
     path: '/ChatThemes',
     name: 'ChatThemes',
     component: ChatThemes
+  },
+  {
+    path: '/FaceRecogniser',
+    name: 'FaceRecogniser',
+    component: FaceRecogniser
+  },
+  {
+    path: '/NavigatorAbilities',
+    name: 'NavigatorAbilities',
+    component: NavigatorAbilities
+  },
+  {
+    path: '/WebRtcChat',
+    name: 'WebRtcChat',
+    component: WebRtcChat
   }
 ]
 const router = new VueRouter({
