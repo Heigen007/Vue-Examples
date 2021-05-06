@@ -70,8 +70,8 @@ export default {
         }
       ],
       InnerArray: [
-        new Date(2021, 4, 6, 10, 30),
-        new Date(2021, 4, 7, 19, 30)
+        new Date(2021, 4, 5, 20, 30),
+        new Date(2021, 4, 11, 7, 30)
       ],
       Holidays: [
         new Date(2021, 4, 6)
@@ -90,9 +90,11 @@ export default {
     let DaysAmount = this.InnerArray[1].getDate() - StartingTime.getDate()
     console.log(DaysAmount)
     let Day = StartingTime.getDay()
+    let CurrentDay = StartingTime.getDate()
     for (let i = 0; i < DaysAmount; i++) {
-      acc = this.addDayTime(acc, Day)
+      acc = this.addDayTime(acc, Day, CurrentDay)
       Day = this.checkWeekDay(Day)
+      CurrentDay = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate() + 1, 0, 0).getDate()
     }
 
     console.log(acc);
@@ -123,16 +125,39 @@ export default {
       }
       return actualTime
     },
+    checkHoliday(date){
+      let a = 1
+      this.Holidays.forEach( el => {
+        if (el.getDate() == date) {
+          console.log(el.getDate());
+          console.log(date,'mmm');
+          a = 0
+        } 
+      })
+      switch(a){
+        case(0):
+          return false
+        case(1):
+          return true
+      }
+    },
     accEndingDay() {
       let acc = 0
       let StartingTime = this.InnerArray[1]
       let Day = StartingTime.getDay()
-      if (this.WeekDays[Day].title != 'rest'){
+      if (this.WeekDays[Day].title != 'rest' && this.checkHoliday(StartingTime.getDate())){
         if (this.WeekDays[Day].workingHours[1][0] < StartingTime.getHours() ||
           (this.WeekDays[Day].workingHours[1][0] == StartingTime.getHours() &&
           this.WeekDays[Day].workingHours[1][1] < StartingTime.getMinutes()))
           {
             StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate(), this.WeekDays[Day].workingHours[1][0], this.WeekDays[Day].workingHours[1][1])
+            console.log(StartingTime, 'sdsd');
+          }
+        if (this.WeekDays[Day].workingHours[0][0] > StartingTime.getHours() ||
+          (this.WeekDays[Day].workingHours[0][0] == StartingTime.getHours() &&
+          this.WeekDays[Day].workingHours[0][1] > StartingTime.getMinutes()))
+          {
+            StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate(), this.WeekDays[Day].workingHours[0][0], this.WeekDays[Day].workingHours[0][1])
             console.log(StartingTime, 'sdsd');
           }
         for(let i = 0; i < this.WeekDays[Day].rests.length; i++) {
@@ -146,13 +171,15 @@ export default {
           }
         }
         console.log(acc);
-        acc = acc + (StartingTime.getHours() - this.WeekDays[Day].workingHours[0][0]) * 60 - (StartingTime.getMinutes() + this.WeekDays[Day].workingHours[0][1])
+        acc = acc + (StartingTime.getHours() - this.WeekDays[Day].workingHours[0][0]) * 60 - (StartingTime.getMinutes() - this.WeekDays[Day].workingHours[0][1])
       }
       return acc
     },
-    addDayTime(acc, Day){
-      console.log(Day);
-      if(this.WeekDays[Day].title != 'rest'){
+    addDayTime(acc, Day, CurrentDay){
+      console.log(CurrentDay,'sss');
+      console.log(acc,'s');
+      console.log(this.checkHoliday(CurrentDay));
+      if (this.WeekDays[Day].title != 'rest' && this.checkHoliday(CurrentDay)){
         let StartingTime = new Date(2000,0,0,this.WeekDays[Day].workingHours[0][0],this.WeekDays[Day].workingHours[0][1])
         for(let i = 0; i < this.WeekDays[Day].rests.length; i++) {
             acc = acc + (this.WeekDays[Day].rests[i][0][0] - StartingTime.getHours()) * 60 + (this.WeekDays[Day].rests[i][0][1] - StartingTime.getMinutes())
@@ -160,6 +187,7 @@ export default {
         }
         acc = acc + (this.WeekDays[Day].workingHours[1][0] - StartingTime.getHours()) * 60 + (this.WeekDays[Day].workingHours[1][1] - StartingTime.getMinutes())
       }
+      console.log(acc,'g');
       return acc
     },
     checkWeekDay(dayId){
@@ -172,13 +200,15 @@ export default {
     accStartingDay(Day, startingTime){
       let acc = 0
       let StartingTime = startingTime
-      for(let i = 0; i < this.WeekDays[Day].rests.length; i++) {
-        if (this.WeekDays[Day].rests[i][0][0] > StartingTime.getHours() ||
-         (this.WeekDays[Day].rests[i][0][0] == StartingTime.getHours() &&
-         this.WeekDays[Day].rests[i][0][1] > StartingTime.getMinutes()))
-        {
-          acc = acc + (this.WeekDays[Day].rests[i][0][0] - StartingTime.getHours()) * 60 + (this.WeekDays[Day].rests[i][0][1] - StartingTime.getMinutes())
-          StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate(), this.WeekDays[Day].rests[i][1][0], this.WeekDays[Day].rests[i][1][1])
+      if(this.checkHoliday(StartingTime.getDate())){
+        for(let i = 0; i < this.WeekDays[Day].rests.length; i++) {
+          if (this.WeekDays[Day].rests[i][0][0] > StartingTime.getHours() ||
+          (this.WeekDays[Day].rests[i][0][0] == StartingTime.getHours() &&
+          this.WeekDays[Day].rests[i][0][1] > StartingTime.getMinutes()))
+          {
+            acc = acc + (this.WeekDays[Day].rests[i][0][0] - StartingTime.getHours()) * 60 + (this.WeekDays[Day].rests[i][0][1] - StartingTime.getMinutes())
+            StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate(), this.WeekDays[Day].rests[i][1][0], this.WeekDays[Day].rests[i][1][1])
+          }
         }
       }
       acc = acc + (this.WeekDays[Day].workingHours[1][0] - StartingTime.getHours()) * 60 + (this.WeekDays[Day].workingHours[1][1] - StartingTime.getMinutes())
