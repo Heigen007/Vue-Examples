@@ -71,7 +71,7 @@ export default {
       ],
       InnerArray: [
         new Date(2021, 4, 5, 20, 30),
-        new Date(2021, 4, 11, 7, 30)
+        new Date(2021, 4, 7, 10, 30)
       ],
       Holidays: [
         new Date(2021, 4, 6)
@@ -90,7 +90,7 @@ export default {
     let DaysAmount = this.InnerArray[1].getDate() - StartingTime.getDate()
     console.log(DaysAmount)
     let Day = StartingTime.getDay()
-    let CurrentDay = StartingTime.getDate()
+    let CurrentDay = StartingTime
     for (let i = 0; i < DaysAmount; i++) {
       acc = this.addDayTime(acc, Day, CurrentDay)
       Day = this.checkWeekDay(Day)
@@ -128,7 +128,7 @@ export default {
     checkHoliday(date){
       let a = 1
       this.Holidays.forEach( el => {
-        if (el.getDate() == date) {
+        if (el.getDate() == date.getDate() && el.getMonth() == date.getMonth() && el.getFullYear() == date.getFullYear()) {
           console.log(el.getDate());
           console.log(date,'mmm');
           a = 0
@@ -145,7 +145,7 @@ export default {
       let acc = 0
       let StartingTime = this.InnerArray[1]
       let Day = StartingTime.getDay()
-      if (this.WeekDays[Day].title != 'rest' && this.checkHoliday(StartingTime.getDate())){
+      if (this.WeekDays[Day].title != 'rest' && this.checkHoliday(StartingTime)){
         if (this.WeekDays[Day].workingHours[1][0] < StartingTime.getHours() ||
           (this.WeekDays[Day].workingHours[1][0] == StartingTime.getHours() &&
           this.WeekDays[Day].workingHours[1][1] < StartingTime.getMinutes()))
