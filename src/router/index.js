@@ -56,11 +56,15 @@ import ChatThemes from '../views/ChatThemes.vue'
 import FaceRecogniser from '../views/FaceApiJs-FaceRecogniser.vue'
 import NavigatorAbilities from '../views/NavigatorAbilities.vue'
 import WebRtcChat from '../views/WebRtcChat.vue'
+import CryptoWall from '../views/CryptoWall.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '*', component: ChatThemes },
+  { 
+   path: '/ChatThemes',
+   name: 'ChatThemes',
+   component: ChatThemes },
   {
     path: '/',
     name: 'Home',
@@ -340,6 +344,11 @@ const routes = [
     path: '/WebRtcChat',
     name: 'WebRtcChat',
     component: WebRtcChat
+  },
+  {
+    path: '/CryptoWall',
+    name: 'CryptoWall',
+    component: CryptoWall
   }
 ]
 const router = new VueRouter({

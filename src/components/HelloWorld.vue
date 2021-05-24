@@ -88,6 +88,11 @@
       <li><a href="/JSTextAnimation">JS Text Animation</a></li>
       <li><a href="/RxJsPaintClone">Rx.js Paint clone</a></li>
     </ul>
+
+    <h3>Super Extra Things</h3>
+    <ul>
+      <li><a href="CryptoWall">Crypto Wall</a></li>
+    </ul>
     <hr style="height: 3px; margin-top: 30px; box-shadow: 0 0 20px rgba(0,0,0,1)">
     <h3>Library`s examples</h3>
     <ul>
