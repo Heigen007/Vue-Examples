@@ -52,7 +52,6 @@
       <li><a href="/THREEJSProductCard">THREEJS Product Card</a></li>
       <li><a href="/ChatThemes">Chat Component With Theme Switcher</a></li>
       <li><a href="/PulseAnimationEffect">Pulse Animation Effect</a></li>
-      <li><a href="/ButtonRippleEffectOnClickEffect">Button Ripple Effect on Click</a></li>
     </ul>
 
     <h3>Complete Page Examples</h3>

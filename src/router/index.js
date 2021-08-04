@@ -24,7 +24,6 @@ import BackgroundBlendMode from '../views/BackgroundBlendMode.vue'
 import PulseAnimationEffect from '../views/PulseAnimationEffect.vue'
 import ThreeDIsometricTextEffect from '../views/ThreeDIsometricTextEffect.vue'
 import ResponsiveLogRegisterForm from '../views/ResponsiveLogRegisterForm.vue'
-import ButtonRippleEffectOnClickEffect from '../views/ButtonRippleEffectOnClickEffect.vue'
 import ResponsiveCardHoverEffect from '../views/ResponsiveCardHoverEffect.vue'
 import CopyToClipboardEffect from '../views/CopyToClipboardEffect.vue'
 import Animated404Page from '../views/Animated404Page.vue'
@@ -184,11 +183,6 @@ const routes = [
     path: '/ResponsiveLogRegisterForm',
     name: 'ResponsiveLogRegisterForm',
     component: ResponsiveLogRegisterForm
-  },
-  {
-    path: '/ButtonRippleEffectOnClickEffect',
-    name: 'ButtonRippleEffectOnClickEffect',
-    component: ButtonRippleEffectOnClickEffect
   },
   {
     path: '/ResponsiveCardHoverEffect',
