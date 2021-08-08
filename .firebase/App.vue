@@ -12,21 +12,34 @@
           <DatePicker v-if='!el.IsTime' v-model="el.time" type='time' format= "HH:mm" range></DatePicker>
           <div>Holiday day <input type="checkbox" v-model='el.IsTime'></div>
           <div class='DayRests' v-if='!el.IsTime'>
-            <div class = 'Button' @click='el.InputRests.push([])' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Add rest</div>
-            <div v-if='el.InputRests.length > 0' class = 'Button Delete' @click='el.InputRests.pop()' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Delete rest</div>
-            <div v-for='(rest, o) in el.InputRests' :key='o'>
-              <DatePicker v-model="el.InputRests[o]" type='time' format= "HH:mm" range></DatePicker>
+            <div class = 'Button' @click='el.rests.push([])' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Add rest</div>
+            <div v-if='el.rests.length > 0' class = 'Button Delete' @click='el.rests.pop()' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Delete rest</div>
+            <div v-for='(rest, o) in el.rests' :key='o'>
+              <DatePicker v-model="el.rests[o]" type='time' format= "HH:mm" range></DatePicker>
             </div>
           </div>
         </div>
       </div>
       <hr style='width: 100%; box-shadow: 0 0 3px rgb(0,0,0)'>
       <div style='font-size:'>Holidays</div>
-      <div class = 'Button' @click='Holidays.push([])' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Add holiday</div>
+      <div class = 'Button' @click='Holidays.push(null)' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Add holiday</div>
       <div v-if='Holidays.length > 0' class = 'Button Delete' @click='Holidays.pop()' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Delete holiday</div>
       <div v-for='(rest, y) in Holidays' :key='y'>
         <DatePicker v-model="Holidays[y]"></DatePicker>
       </div>
+
+      <hr style='width: 100%; box-shadow: 0 0 3px rgb(0,0,0)'>
+      <div style='font-size:'>Extra days functional</div>
+      <div class = 'Button' @click='ExtraDays.push([])' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Add extra day</div>
+      <div v-if='ExtraDays.length > 0' class = 'Button Delete' @click='ExtraDays.pop()' style='font-size: 1.3rem; display: flex; flex-direction: column; align-items: center'>Delete extra day</div>
+      <div v-for='(rest, y) in ExtraDays' class='WeekDay' :key='y+"y"'>
+        <div v-if='ExtraDays[y][0]'>Day: {{ExtraDays[y][0].toLocaleString('en-US', options)}}</div>
+        <div v-else>Choose the day: </div>
+        <DatePicker v-model="ExtraDays[y][0]"></DatePicker>
+        <div>Choose the time range:</div>
+        <DatePicker v-model="ExtraDays[y][1]" type='time' format= "HH:mm" range></DatePicker>
+      </div>
+
       <hr style='width: 100%; box-shadow: 0 0 3px rgb(0,0,0)'>
       <div class="Button success" style='font-size: 1.3rem;' @click='CalcTime'>Compute the working time</div>
     </div>
@@ -34,8 +47,8 @@
 </template>
 
 <script>
-import DatePicker from '../public/vue2-datepicker';
-import '../public/vue2-datepicker/index.css';
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
 export default {
   name: "Home",
   components: {
@@ -48,7 +61,7 @@ export default {
         {
           name: 'Sunday',
           title: '',
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
@@ -60,7 +73,7 @@ export default {
               [13, 0], [14, 30]
             ]
           ],
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
@@ -72,7 +85,7 @@ export default {
               [13, 0], [14, 30]
             ]
           ],
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
@@ -84,7 +97,7 @@ export default {
               [13, 0], [14, 30]
             ]
           ],
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
@@ -96,7 +109,7 @@ export default {
               [13, 0], [14, 30]
             ]
           ],
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
@@ -108,42 +121,24 @@ export default {
               [13, 0], [14, 30]
             ]
           ],
-          InputRests: [],
+          rests: [],
           IsTime: false
         },
         {
           name: 'Saturday',
           title: '',
-          InputRests: [],
+          rests: [],
           IsTime: false
         }
       ],
       InnerArray: [],
-      Holidays: []
+      Holidays: [],
+      ExtraDays: [],
+      options: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     }
-  },
-  mounted() {
-    let acc = 0
-    let StartingTime = this.findStartingTime()
-    if (StartingTime.getDate() == this.InnerArray[0].getDate()) {
-      acc = this.accStartingDay(StartingTime.getDay(), StartingTime)
-      StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate() + 1, 0, 0)
-    }
-    let DaysAmount = this.InnerArray[1].getDate() - StartingTime.getDate()
-    let Day = StartingTime.getDay()
-    let CurrentDay = StartingTime
-    for (let i = 0; i < DaysAmount; i++) {
-      acc = this.addDayTime(acc, Day, CurrentDay)
-      Day = this.checkWeekDay(Day)
-      CurrentDay = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate() + 1, 0, 0)
-    }
-
-    acc = acc + this.accEndingDay()
-
-    console.log(acc);
   },
   methods:{
-    findStartingTime(){
+    findStartingTime(){z
       let weekDays = this.WeekDays
       let actualTime = this.InnerArray[0]
       let dayOfWeek = actualTime.getDay()
@@ -260,7 +255,6 @@ export default {
           dayOfWeek = this.checkWeekDay(dayOfWeek)
           acc++
         }
-        alert(1)
         return new Date(actualTime.getFullYear(), actualTime.getMonth(), actualTime.getDate() + acc, weekDays[dayOfWeek + 1].workingHours[0][0], weekDays[dayOfWeek + 1].workingHours[0][1])
       }
 
@@ -283,24 +277,37 @@ export default {
     CalcTime(){
       this.InnerArray = this.time
       for(let i = 0; i < this.WeekDays.length; i++){
+        for (let index = 0; index < this.WeekDays[i]?.rests?.length; index++) {
+          this.WeekDays[i].rests[index] = [[this.WeekDays[i]?.rests[index]?.[0]?.getHours(),this.WeekDays[i]?.rests[index]?.[0]?.getMinutes()],[this.WeekDays[i]?.rests[index]?.[1]?.getHours(),this.WeekDays[i]?.rests[index]?.[1]?.getMinutes()]]
+        }
         this.WeekDays[i] = {
           name: this.WeekDays[i].name,
-          title: this.WeekDays[i].IsTime ? 'work' : 'rest',
-          workingHours: [[this.WeekDays[i]?.time[0].getHours(),this.WeekDays[i]?.time[0].getMinutes()],[this.WeekDays[i]?.time[1].getHours(),this.WeekDays[i]?.time[1].getMinutes()]]
+          title: this.WeekDays[i].IsTime ? 'rest' : 'work',
+          workingHours: [[this.WeekDays[i]?.time?.[0]?.getHours(),this.WeekDays[i]?.time?.[0]?.getMinutes()],[this.WeekDays[i]?.time?.[1]?.getHours(),this.WeekDays[i]?.time?.[1]?.getMinutes()]],
+          rests: this.WeekDays[i].rests
         }
       }
-        //       {
-        //   name: 'Tuesday',
-        //   title: '',
-        //   workingHours: [[8, 30], [19, 30]],
-        //   rests: [
-        //     [
-        //       [13, 0], [14, 30]
-        //     ]
-        //   ],
-        //   InputRests: [],
-        //   IsTime: false
-        // },
+      this.finalCalc()
+    },
+    finalCalc(){
+      let acc = 0
+      let StartingTime = this.findStartingTime()
+      if (StartingTime.getDate() == this.InnerArray[0].getDate()) {
+        acc = this.accStartingDay(StartingTime.getDay(), StartingTime)
+        StartingTime = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate() + 1, 0, 0)
+      }
+      let DaysAmount = this.InnerArray[1].getDate() - StartingTime.getDate()
+      let Day = StartingTime.getDay()
+      let CurrentDay = StartingTime
+      for (let i = 0; i < DaysAmount; i++) {
+        acc = this.addDayTime(acc, Day, CurrentDay)
+        Day = this.checkWeekDay(Day)
+        CurrentDay = new Date(StartingTime.getFullYear(), StartingTime.getMonth(), StartingTime.getDate() + 1, 0, 0)
+      }
+
+      acc = acc + this.accEndingDay()
+
+      console.log(acc);
     }
   }
 };
