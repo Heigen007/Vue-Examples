@@ -101,7 +101,6 @@ window.onscroll = function() {
 </script>
 
 <style scoped>
- /* @import url("../../node_modules/bootstrap/dist/css/bootstrap.min.css"); */
 * {
   margin: 0;
   padding: 0;

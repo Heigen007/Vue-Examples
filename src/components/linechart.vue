@@ -1,5 +1,5 @@
 <template>
-      <svg :viewBox="viewBox" xmlns="http://www.w3.org/2000/svg">
+    <svg :viewBox="viewBox" xmlns="http://www.w3.org/2000/svg">
         <polyline class="color" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" :points="chartPoints" />
         <circle class="color" :cx="cx" :cy="cy" r="4" fill="#fff" stroke="none" />
     </svg>
